@@ -1,10 +1,10 @@
-## Usage
+## Project setup
+
+### 1. Install dependencies
 
 ```bash
-$ npm install # or pnpm install or yarn install
+$ pnpm install
 ```
-
-### Learn more on the [Solid Website](https://solidjs.com) and come chat with us on our [Discord](https://discord.com/invite/solidjs)
 
 ## Available Scripts
 
@@ -22,6 +22,14 @@ It correctly bundles Solid in production mode and optimizes the build for the be
 
 The build is minified and the filenames include the hashes.<br>
 Your app is ready to be deployed!
+
+## Linting
+
+Project is linted with eslint.
+
+```
+npm run lint
+```
 
 ## Deployment
 
