@@ -31,6 +31,6 @@ jobs:
       - name: Build code
         run: npm run build -- --base=/jack-of-all-dominion-2/
       - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@v4.6.1
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: dist
