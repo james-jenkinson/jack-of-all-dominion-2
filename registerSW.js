@@ -1,0 +1,1 @@
+if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/jack-of-all-dominion-2/sw.js', { scope: '/jack-of-all-dominion-2/' })})}
