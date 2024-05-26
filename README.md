@@ -33,4 +33,6 @@ npm run lint
 
 ## Deployment
 
-Learn more about deploying your application with the [documentations](https://vitejs.dev/guide/static-deploy.html)
+The site is deployed to Github pages via Github actions.
+
+The site can be found here at: https://james-jenkinson.github.io/jack-of-all-dominion-2/

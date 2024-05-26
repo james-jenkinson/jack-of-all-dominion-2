@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite'
 import solid from 'vite-plugin-solid'
 import { VitePWA, VitePWAOptions } from 'vite-plugin-pwa'
+import i18nextLoader from 'vite-plugin-i18next-loader'
 
 const pwaConfig: Partial<VitePWAOptions> = {
   manifest: {
@@ -25,5 +26,5 @@ const pwaConfig: Partial<VitePWAOptions> = {
 }
 
 export default defineConfig({
-  plugins: [solid(), VitePWA(pwaConfig)],
+  plugins: [solid(), VitePWA(pwaConfig), i18nextLoader({ paths: ['./locales'] })],
 })
