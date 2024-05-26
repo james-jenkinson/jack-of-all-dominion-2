@@ -1,5 +1,5 @@
-import { A } from '@solidjs/router';
-import { type JSX, type ParentProps } from 'solid-js';
+import { A } from '@solidjs/router'
+import { type JSX, type ParentProps } from 'solid-js'
 
 function MainLayout (props: ParentProps): JSX.Element {
   return (
@@ -12,4 +12,4 @@ function MainLayout (props: ParentProps): JSX.Element {
   )
 }
 
-export default MainLayout;
+export default MainLayout

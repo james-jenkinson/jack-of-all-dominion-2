@@ -11,7 +11,7 @@ describe('MainLayout', () => {
       </Router>
     )
 
-    const text = screen.getByText('This is the layoutx')
+    const text = screen.getByText('This is the layout')
     expect(text).toBeInTheDocument()
   })
 })
