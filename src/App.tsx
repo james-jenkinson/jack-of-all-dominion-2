@@ -5,7 +5,7 @@ import './App.css'
 
 function App (): JSX.Element {
   return (
-    <Router>
+    <Router base={import.meta.env.BASE_URL}>
       {routes}
     </Router>
   )

@@ -29,7 +29,7 @@ jobs:
       - name: Install dependencies
         run: pnpm install
       - name: Build code
-        run: npm run build -- --base=/jack-of-all-dominion-2/
+        run: npm run build -- --base=/jack-of-all-dominion-2
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
