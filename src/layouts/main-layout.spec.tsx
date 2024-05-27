@@ -1,6 +1,5 @@
 import { render, screen } from '@solidjs/testing-library'
 import MainLayout from './main-layout'
-// import '@testing-library/jest-dom'
 import { Route, Router } from '@solidjs/router'
 
 describe('MainLayout', () => {
