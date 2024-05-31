@@ -1,0 +1,19 @@
+.button-icon {
+    --button-size: 44px;
+    --padding: 0.5rem;
+    background-color: transparent;
+    border: none;
+    text-indent: -10000px;
+    user-select: none;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 1.5rem;
+    min-width: var(--button-size);
+    min-height: var(--button-size);
+    padding: var(--padding);
+    cursor: pointer;
+}
+
+.close-button {
+    background-image: url('/icons/close.svg');
+}
