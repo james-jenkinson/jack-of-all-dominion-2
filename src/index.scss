@@ -3,3 +3,35 @@
 * {
     box-sizing: border-box;
 }
+
+@font-face {
+  font-family: 'Atkinson';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/font/Atkinson-Hyperlegible-Regular-102.woff');
+}
+
+@font-face {
+  font-family: 'Atkinson';
+  font-style: normal;
+  font-weight: 700;
+  src: url('/font/Atkinson-Hyperlegible-Bold-102.woff');
+}
+
+@font-face {
+  font-family: 'Atkinson';
+  font-style: italic;
+  font-weight: 400;
+  src: url('/font/Atkinson-Hyperlegible-Italic-102.woff');
+}
+
+@font-face {
+  font-family: 'Atkinson';
+  font-style: italic;
+  font-weight: 700;
+  src: url('/font/Atkinson-Hyperlegible-BoldItalic-102.woff');
+}
+
+body {
+  font-family: 'Atkinson', Arial, Helvetica, sans-serif; /* Use the font family */
+}
