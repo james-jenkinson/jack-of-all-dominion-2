@@ -9,7 +9,11 @@ interface Context {
   t: (value: string) => string
 }
 
-const LanguageContext = createContext<Context>()
+const defaultValue: Context = {
+  t: (value) => value
+}
+
+const LanguageContext = createContext<Context>(defaultValue)
 
 export function LanguageProvider (props: Props): JSX.Element {
   return (
@@ -21,10 +25,6 @@ export function LanguageProvider (props: Props): JSX.Element {
 
 export function useLanguage (): Context {
   const context = useContext(LanguageContext)
-
-  if (context == null) {
-    throw new Error('Language context used out of scope. Ensure language context is provided.')
-  }
 
   return context
 }

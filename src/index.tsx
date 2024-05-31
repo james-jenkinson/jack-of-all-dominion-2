@@ -2,7 +2,7 @@
 import { render } from 'solid-js/web'
 import translations from 'virtual:i18next-loader'
 
-import './index.css'
+import './index.scss'
 import App from './App'
 
 import i18n, { type Resource } from 'i18next'
