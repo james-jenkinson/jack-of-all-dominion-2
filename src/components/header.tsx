@@ -1,4 +1,4 @@
-import { A } from '@solidjs/router'
+import { A, useBeforeLeave } from '@solidjs/router'
 import { Show, createEffect, createSignal, onCleanup, type JSX } from 'solid-js'
 import { useLanguage } from '../contexts/languageContext'
 import styles from './header.module.scss'
@@ -25,6 +25,10 @@ function Header (): JSX.Element {
     }
     document.addEventListener('keydown', onKeydown)
     onCleanup(() => { document.removeEventListener('keydown', onKeydown) })
+  })
+
+  useBeforeLeave(() => {
+    closeMenu()
   })
 
   return (

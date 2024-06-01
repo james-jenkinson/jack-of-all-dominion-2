@@ -23,6 +23,9 @@ const pwaConfig: Partial<VitePWAOptions> = {
   },
   strategies: 'generateSW',
   registerType: 'autoUpdate',
+  includeAssets: [
+    'font/*.woff'
+  ]
 }
 
 export default defineConfig({
