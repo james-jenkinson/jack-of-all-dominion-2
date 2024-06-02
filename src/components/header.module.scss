@@ -3,7 +3,7 @@
 }
 
 .nav {
-    background-color: white;
+    background-color: var(--background-color);
     position: fixed;
     left: 0;
     top: 0;
@@ -23,7 +23,11 @@
 
 .navigation-items {
     display: grid;
-    gap: 0.5rem;
+    gap: 0.8rem;
+
+    a {
+        font-size: 1.5rem;
+    }
 }
 
 .backdrop {

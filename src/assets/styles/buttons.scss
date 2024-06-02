@@ -12,6 +12,7 @@
     min-height: var(--button-size);
     padding: var(--padding);
     cursor: pointer;
+    filter: var(--icon-filter);
 }
 
 .close-button {

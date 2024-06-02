@@ -1,4 +1,6 @@
 @import './assets/styles/buttons.scss';
+@import './assets/styles/links.scss';
+@import './assets/styles/theme.scss';
 
 * {
     box-sizing: border-box;
@@ -34,4 +36,6 @@
 
 body {
   font-family: 'Atkinson', Arial, Helvetica, sans-serif; /* Use the font family */
+  background-color: var(--background-color);
+  color: var(--text-color);
 }

@@ -1,0 +1,15 @@
+:root {
+    --off-black: #353535;
+    --off-white: #eaecfa;
+
+    --background-color: var(--off-white);
+    --text-color: var(--off-black);
+}
+
+@media(prefers-color-scheme: dark) {
+    :root {
+        --background-color: var(--off-black);
+        --text-color: var(--off-white);
+        --icon-filter: invert(1);
+    }
+}
