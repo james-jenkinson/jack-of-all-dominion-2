@@ -45,7 +45,7 @@ function Header (): JSX.Element {
             onClick={closeMenu}
           >{t('Close navigation menu')}</button>
           <div class={styles['navigation-items']}>
-            <A href='/' ref={setHomeRef}>{t('Home')}</A>
+            <A href='/' ref={setHomeRef}>{t('Set selection')}</A>
             <A href='/page-2'>Page 2</A>
           </div>
         </nav>
