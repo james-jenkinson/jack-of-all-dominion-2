@@ -24,7 +24,5 @@ export function LanguageProvider (props: Props): JSX.Element {
 }
 
 export function useLanguage (): Context {
-  const context = useContext(LanguageContext)
-
-  return context
+  return useContext(LanguageContext)
 }

@@ -4,9 +4,12 @@ import translations from 'virtual:i18next-loader'
 
 import './index.scss'
 import App from './App'
+import database from './data/database'
 
 import i18n, { type Resource } from 'i18next'
 import { LanguageProvider } from './contexts/languageContext'
+
+console.log('JJ: Database', database)
 
 // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
 const root = document.getElementById('root')!
@@ -19,7 +22,6 @@ const resources = Object.keys(translations as Record<string, unknown>).reduce<Re
 i18n.init({
   lng: 'en',
   fallbackLng: 'en',
-  debug: true,
   resources
 }).then((t) => {
   render(() => (
