@@ -1,4 +1,4 @@
-import { render, screen, waitFor } from '@solidjs/testing-library'
+import { screen, waitFor } from '@solidjs/testing-library'
 import userEvent from '@testing-library/user-event'
 import Header from './header'
 import { renderWithRouter } from '../tests'
@@ -6,7 +6,7 @@ import { renderWithRouter } from '../tests'
 describe('Header', () => {
   describe('When first loaded', () => {
     it('should not have the navigation menu', () => {
-      render(Header)
+      renderWithRouter(Header)
 
       expect(screen.queryByRole('navigation')).not.toBeInTheDocument()
     })
