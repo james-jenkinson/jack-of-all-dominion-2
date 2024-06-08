@@ -1,16 +1,18 @@
 import { type JSX, createContext, useContext } from 'solid-js'
+import { type TFunction } from 'i18next'
 
 interface Props {
-  t: (value: string) => string
+  t: TFunction
   children: JSX.Element
 }
 
 interface Context {
-  t: (value: string) => string
+  t: TFunction
 }
 
 const defaultValue: Context = {
-  t: (value) => value
+  // @ts-expect-error Issue with i18n types
+  t: (value) => value.toString()
 }
 
 const LanguageContext = createContext<Context>(defaultValue)

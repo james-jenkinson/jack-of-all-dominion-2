@@ -11,14 +11,20 @@ import database, { addInitialData } from '../data/database'
 
 const noop = (): void => {}
 
+type ExpansionId = number
+
+type ExpansionWithId = Expansion & { id: ExpansionId }
+
 interface Context {
-  expansions: Accessor<Expansion[]>
+  expansions: Accessor<ExpansionWithId[]>
+  cards: Accessor<Map<ExpansionId, Card[]>>
   availableCards: Accessor<Card[]>
   selectExpansion: (name: string, selected: boolean) => void
 }
 
 const defaultValue: Context = {
   expansions: createSignal([])[0],
+  cards: createSignal(new Map<ExpansionId, Card[]>())[0],
   availableCards: createSignal([])[0],
   selectExpansion: noop
 }
@@ -29,7 +35,6 @@ export function DataProvider(props: ParentProps): JSX.Element {
   const [expansions, setExpansions] = createSignal<
     Array<Expansion & { id: number }>
   >([])
-  type ExpansionId = number
   const [cards, setCards] = createSignal<Map<ExpansionId, Card[]>>(new Map())
 
   const initialData = addInitialData()
@@ -80,6 +85,7 @@ export function DataProvider(props: ParentProps): JSX.Element {
     <DataContext.Provider
       value={{
         expansions,
+        cards,
         selectExpansion: (name, selected) => {
           void selectExpansion(name, selected)
         },

@@ -1,0 +1,11 @@
+.expansion-list {
+	display: grid;
+	grid-template-columns: max-content min-content;
+	column-gap: 2rem;
+	
+	*:not(.card-item > *) {
+		display: grid;
+		grid-template-columns: subgrid;
+		grid-column: 1/3;
+	}
+}
