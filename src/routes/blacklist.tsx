@@ -5,7 +5,7 @@ import styles from './blacklist.module.scss'
 
 function Blacklist(): JSX.Element {
   const { t } = useLanguage()
-  const { cards, expansions } = useData()
+  const { cards, expansions, blacklistCard } = useData()
 
   return (
     <>
@@ -26,7 +26,14 @@ function Blacklist(): JSX.Element {
                     <>
                       <li class={styles['card-item']}>
                         <label for={card.name}>{card.name}</label>
-                        <input id={card.name} type="checkbox" />
+                        <input
+                          id={card.name}
+                          type="checkbox"
+                          onChange={(e) => {
+                            blacklistCard(card.name, e.target.checked)
+                          }}
+                          checked={card.blacklisted}
+                        />
                       </li>
                     </>
                   )}

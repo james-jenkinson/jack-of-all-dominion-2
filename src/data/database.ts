@@ -38,7 +38,8 @@ export async function addInitialData(): Promise<void> {
     const expansionId = expansion.id
     await cardsTable.add({
       name: card.name,
-      expansionId
+      expansionId,
+      blacklisted: false
     })
   }
 }

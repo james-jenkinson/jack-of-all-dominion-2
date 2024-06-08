@@ -1,6 +1,6 @@
-import { type Card } from '../Card'
+import { type Card } from './ExpansionCard'
 
-const empiresCards: Array<Omit<Card, 'expansionId'>> = [
+const empiresCards: Card[] = [
   {
     name: 'Engineer'
   },
