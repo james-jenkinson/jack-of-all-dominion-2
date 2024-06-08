@@ -1,17 +1,20 @@
-import { type Card } from './Card'
+import { type Card } from '.'
+import { type Card as ExpansionCard } from './expansionCards/ExpansionCard'
 import dominionCards from './expansionCards/dominion'
 import empiresCards from './expansionCards/empires'
 import renaissanceCards from './expansionCards/renaissance'
 
-type CardWithoutExpansion = Omit<Card, 'expansionId'>
-type CardWithExpansionName = CardWithoutExpansion & { expansionName: string }
+type CardWithExpansionName = Omit<Card, 'expansionId'> & {
+  expansionName: string
+}
 
 const addExpansionName =
   (expansionName: string) =>
-  (cardWithoutExpansion: CardWithoutExpansion): CardWithExpansionName => {
+  (cardWithoutExpansion: ExpansionCard): CardWithExpansionName => {
     return {
       ...cardWithoutExpansion,
-      expansionName
+      expansionName,
+      blacklisted: false
     }
   }
 

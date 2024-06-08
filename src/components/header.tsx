@@ -57,6 +57,7 @@ function Header(): JSX.Element {
             <A href="/" ref={setHomeRef}>
               {t('Set selection')}
             </A>
+            <A href="/blacklist">{t('Blacklist')}</A>
             <A href="/kingdom">{t('Kingdom')}</A>
           </div>
         </nav>
