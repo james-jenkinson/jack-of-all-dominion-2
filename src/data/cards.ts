@@ -6,12 +6,14 @@ import renaissanceCards from './expansionCards/renaissance'
 type CardWithoutExpansion = Omit<Card, 'expansionId'>
 type CardWithExpansionName = CardWithoutExpansion & { expansionName: string }
 
-const addExpansionName = (expansionName: string) => (cardWithoutExpansion: CardWithoutExpansion): CardWithExpansionName => {
-  return {
-    ...cardWithoutExpansion,
-    expansionName
+const addExpansionName =
+  (expansionName: string) =>
+  (cardWithoutExpansion: CardWithoutExpansion): CardWithExpansionName => {
+    return {
+      ...cardWithoutExpansion,
+      expansionName
+    }
   }
-}
 
 const cards: CardWithExpansionName[] = [
   ...dominionCards.map(addExpansionName('Dominion')),

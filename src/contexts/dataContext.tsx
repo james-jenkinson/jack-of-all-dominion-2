@@ -1,4 +1,11 @@
-import { type JSX, type ParentProps, createContext, createSignal, useContext, type Accessor } from 'solid-js'
+import {
+  type JSX,
+  type ParentProps,
+  createContext,
+  createSignal,
+  useContext,
+  type Accessor
+} from 'solid-js'
 import { type Card, type Expansion } from '../data'
 import database, { addInitialData } from '../data/database'
 
@@ -18,18 +25,22 @@ const defaultValue: Context = {
 
 const DataContext = createContext<Context>(defaultValue)
 
-export function DataProvider (props: ParentProps): JSX.Element {
-  const [expansions, setExpansions] = createSignal<Array<Expansion & { id: number }>>([])
+export function DataProvider(props: ParentProps): JSX.Element {
+  const [expansions, setExpansions] = createSignal<
+    Array<Expansion & { id: number }>
+  >([])
   type ExpansionId = number
   const [cards, setCards] = createSignal<Map<ExpansionId, Card[]>>(new Map())
 
   const initialData = addInitialData()
 
-  initialData.then(async () => await database.table('expansions').toArray())
+  initialData
+    .then(async () => await database.table('expansions').toArray())
     .then(setExpansions)
     .catch(console.error)
 
-  initialData.then(async () => await database.table<Card>('cards').toArray())
+  initialData
+    .then(async () => await database.table<Card>('cards').toArray())
     .then((cards) => {
       const map = cards.reduce<Map<ExpansionId, Card[]>>((prev, next) => {
         if (prev.get(next.expansionId) == null) {
@@ -42,29 +53,44 @@ export function DataProvider (props: ParentProps): JSX.Element {
     })
     .catch(console.error)
 
-  const selectExpansion = async (name: string, selected: boolean): Promise<void> => {
-    await database.table('expansions').where('name').equals(name).modify({ selected })
+  const selectExpansion = async (
+    name: string,
+    selected: boolean
+  ): Promise<void> => {
+    await database
+      .table('expansions')
+      .where('name')
+      .equals(name)
+      .modify({ selected })
     setExpansions(await database.table('expansions').toArray())
   }
 
   const availableCards = (): Card[] => {
     const _cards = cards()
-    const selectedExpansions = expansions().filter(expansion => expansion.selected)
-    const cardsFromSelectedExpansions = selectedExpansions.map(expansion => _cards.get(expansion.id) ?? []).flat()
+    const selectedExpansions = expansions().filter(
+      (expansion) => expansion.selected
+    )
+    const cardsFromSelectedExpansions = selectedExpansions
+      .map((expansion) => _cards.get(expansion.id) ?? [])
+      .flat()
     return cardsFromSelectedExpansions
   }
 
   return (
-    <DataContext.Provider value={{
-      expansions,
-      selectExpansion: (name, selected) => { void selectExpansion(name, selected) },
-      availableCards
-    }}>
+    <DataContext.Provider
+      value={{
+        expansions,
+        selectExpansion: (name, selected) => {
+          void selectExpansion(name, selected)
+        },
+        availableCards
+      }}
+    >
       {props.children}
     </DataContext.Provider>
   )
 }
 
-export function useData (): Context {
+export function useData(): Context {
   return useContext(DataContext)
 }

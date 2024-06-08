@@ -10,7 +10,7 @@ database.version(versionNumber).stores({
   cards: '++id, &name, expansionId'
 })
 
-export async function addInitialData (): Promise<void> {
+export async function addInitialData(): Promise<void> {
   const expansionsTable = database.table('expansions')
   const cardsTable = database.table('cards')
 
@@ -30,7 +30,9 @@ export async function addInitialData (): Promise<void> {
     const expansion = await expansionsTable.get({ name: card.expansionName })
 
     if (expansion == null) {
-      throw new Error(`Card is set with an expansion name that does not exist, please check, card: ${card.name}, expansion: ${card.expansionName}`)
+      throw new Error(
+        `Card is set with an expansion name that does not exist, please check, card: ${card.name}, expansion: ${card.expansionName}`
+      )
     }
 
     const expansionId = expansion.id

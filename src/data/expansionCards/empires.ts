@@ -35,7 +35,7 @@ const empiresCards: Array<Omit<Card, 'expansionId'>> = [
     name: 'Enchantress'
   },
   {
-    name: 'Farmers\' Market'
+    name: "Farmers' Market"
   },
   {
     name: 'Gladiator/Fortune'

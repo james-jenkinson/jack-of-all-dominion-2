@@ -10,19 +10,27 @@ import { LanguageProvider } from './contexts/languageContext'
 
 const root = document.getElementById('root')!
 
-const resources = Object.keys(translations as Record<string, unknown>).reduce<Resource>((prev, next) => {
+const resources = Object.keys(
+  translations as Record<string, unknown>
+).reduce<Resource>((prev, next) => {
   prev[next] = { translation: translations[next] }
   return prev
 }, {})
 
-i18n.init({
-  lng: 'en',
-  fallbackLng: 'en',
-  resources
-}).then((t) => {
-  render(() => (
-    <LanguageProvider t={t}>
-      <App />
-    </LanguageProvider>
-  ), root)
-}).catch(console.error)
+i18n
+  .init({
+    lng: 'en',
+    fallbackLng: 'en',
+    resources
+  })
+  .then((t) => {
+    render(
+      () => (
+        <LanguageProvider t={t}>
+          <App />
+        </LanguageProvider>
+      ),
+      root
+    )
+  })
+  .catch(console.error)

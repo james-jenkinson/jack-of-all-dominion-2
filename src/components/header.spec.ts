@@ -16,7 +16,9 @@ describe('Header', () => {
     it('should include the navigation menu', async () => {
       renderWithRouter(Header)
 
-      const button = screen.getByRole('button', { name: 'Open navigation menu' })
+      const button = screen.getByRole('button', {
+        name: 'Open navigation menu'
+      })
 
       await userEvent.click(button)
 
@@ -26,7 +28,9 @@ describe('Header', () => {
     it('Should dismiss the menu with the escape button', async () => {
       renderWithRouter(Header)
 
-      const button = screen.getByRole('button', { name: 'Open navigation menu' })
+      const button = screen.getByRole('button', {
+        name: 'Open navigation menu'
+      })
 
       await userEvent.click(button)
 

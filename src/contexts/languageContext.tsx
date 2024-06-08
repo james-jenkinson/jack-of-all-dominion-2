@@ -15,7 +15,7 @@ const defaultValue: Context = {
 
 const LanguageContext = createContext<Context>(defaultValue)
 
-export function LanguageProvider (props: Props): JSX.Element {
+export function LanguageProvider(props: Props): JSX.Element {
   return (
     <LanguageContext.Provider value={{ t: props.t }}>
       {props.children}
@@ -23,6 +23,6 @@ export function LanguageProvider (props: Props): JSX.Element {
   )
 }
 
-export function useLanguage (): Context {
+export function useLanguage(): Context {
   return useContext(LanguageContext)
 }

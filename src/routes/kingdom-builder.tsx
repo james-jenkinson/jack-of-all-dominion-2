@@ -4,7 +4,7 @@ import kingdomBuilderService from '../services/kingdom-builder.service'
 import { useData } from '../contexts/dataContext'
 import { type Card } from '../data'
 
-function KingdomBuilder (): JSX.Element {
+function KingdomBuilder(): JSX.Element {
   const { t } = useLanguage()
   const { availableCards } = useData()
 
@@ -17,10 +17,7 @@ function KingdomBuilder (): JSX.Element {
     <>
       <h1>{t('Kingdom Builder')}</h1>
       <ul>
-        <For each={kingdom()}>{card => (
-          <li>{card.name}</li>
-        )}
-        </For>
+        <For each={kingdom()}>{(card) => <li>{card.name}</li>}</For>
       </ul>
     </>
   )

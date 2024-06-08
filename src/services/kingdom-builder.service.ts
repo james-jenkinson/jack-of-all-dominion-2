@@ -1,6 +1,6 @@
 import { type Card } from '../data'
 
-function buildKingdom (cards: Card[]): Card[] {
+function buildKingdom(cards: Card[]): Card[] {
   return [...cards].splice(0, 10)
 }
 

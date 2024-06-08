@@ -1,7 +1,7 @@
 import { type JSX, type ParentProps } from 'solid-js'
 import Header from '../components/header'
 
-function MainLayout (props: ParentProps): JSX.Element {
+function MainLayout(props: ParentProps): JSX.Element {
   return (
     <>
       <Header />
