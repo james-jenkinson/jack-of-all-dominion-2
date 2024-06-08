@@ -94,6 +94,7 @@ export function DataProvider(props: ParentProps): JSX.Element {
     const cardsFromSelectedExpansions = selectedExpansions
       .map((expansion) => _cards.get(expansion.id) ?? [])
       .flat()
+      .filter((card) => !card.blacklisted)
     return cardsFromSelectedExpansions
   }
 
