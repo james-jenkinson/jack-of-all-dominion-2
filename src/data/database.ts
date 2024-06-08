@@ -10,7 +10,7 @@ database.version(versionNumber).stores({
   cards: '++id, &name, expansionId'
 })
 
-async function addInitialData (): Promise<void> {
+export async function addInitialData (): Promise<void> {
   const expansionsTable = database.table('expansions')
   const cardsTable = database.table('cards')
 
@@ -40,7 +40,5 @@ async function addInitialData (): Promise<void> {
     })
   }
 }
-
-addInitialData().catch(console.error)
 
 export default database

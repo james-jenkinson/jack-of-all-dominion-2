@@ -23,6 +23,7 @@
         "@typescript-eslint"
     ],
     "rules": {
-        "import/no-absolute-path": "off"
+        "import/no-absolute-path": "off",
+        "@typescript-eslint/no-non-null-assertion": "off"
     }
 }

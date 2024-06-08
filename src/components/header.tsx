@@ -46,7 +46,7 @@ function Header (): JSX.Element {
           >{t('Close navigation menu')}</button>
           <div class={styles['navigation-items']}>
             <A href='/' ref={setHomeRef}>{t('Set selection')}</A>
-            <A href='/page-2'>Page 2</A>
+            <A href='/kingdom'>{t('Kingdom')}</A>
           </div>
         </nav>
         <div classList={{ [styles.backdrop]: menuOpen() }} onClick={closeMenu}></div>

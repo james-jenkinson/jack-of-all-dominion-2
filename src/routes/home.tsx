@@ -4,9 +4,8 @@ import { useLanguage } from '../contexts/languageContext'
 import styles from './home.module.scss'
 
 function Home (): JSX.Element {
-  const { expansions } = useData()
+  const { expansions, selectExpansion } = useData()
   const { t } = useLanguage()
-  console.log('JJ: Expansions', expansions)
 
   return (
     <>
@@ -18,7 +17,9 @@ function Home (): JSX.Element {
           return (
             <>
               <label for={id}>{expansion.name}</label>
-              <input id={id} type="checkbox"></input>
+              <input id={id} type="checkbox" onChange={(e) => {
+                selectExpansion(expansion.name, e.target.checked)
+              }} checked={expansion.selected}></input>
             </>
           )
         }
