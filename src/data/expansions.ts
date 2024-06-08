@@ -2,13 +2,16 @@ import { type Expansion } from './Expansion'
 
 const expansions: Expansion[] = [
   {
-    name: 'Dominion'
+    name: 'Dominion',
+    selected: false
   },
   {
-    name: 'Renaissance'
+    name: 'Renaissance',
+    selected: false
   },
   {
-    name: 'Empires'
+    name: 'Empires',
+    selected: false
   }
 ]
 
