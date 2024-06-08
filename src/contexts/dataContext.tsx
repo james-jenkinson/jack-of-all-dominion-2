@@ -50,7 +50,7 @@ export function DataProvider (props: ParentProps): JSX.Element {
   const availableCards = (): Card[] => {
     const _cards = cards()
     const selectedExpansions = expansions().filter(expansion => expansion.selected)
-    const cardsFromSelectedExpansions = selectedExpansions.map(expansion => _cards.get(expansion.id)!).flat()
+    const cardsFromSelectedExpansions = selectedExpansions.map(expansion => _cards.get(expansion.id) ?? []).flat()
     return cardsFromSelectedExpansions
   }
 
