@@ -2,9 +2,9 @@
     display: grid;
     grid-template-columns: max-content min-content;
     max-width: 600px;
-    column-gap: 2rem;
 
     label {
         font-size: 1.5rem;
+        padding-right: 2rem;
     }
 }
