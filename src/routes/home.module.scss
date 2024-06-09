@@ -1,6 +1,7 @@
 .selection-list {
     display: grid;
     grid-template-columns: max-content min-content;
+    align-items: center;
     max-width: 600px;
 
     label {

@@ -14,31 +14,33 @@ function Blacklist(): JSX.Element {
         <For each={expansions()}>
           {(expansion) => (
             <li>
-              {expansion.name}
+              <details open>
+                <summary>{expansion.name}</summary>
 
-              <ul
-                aria-label={t('Cards within {{expansion}}', {
-                  expansion: expansion.name
-                })}
-              >
-                <For each={cards().get(expansion.id)}>
-                  {(card) => (
-                    <>
-                      <li class={styles['card-item']}>
-                        <label for={card.name}>{card.name}</label>
-                        <input
-                          id={card.name}
-                          type="checkbox"
-                          onChange={(e) => {
-                            blacklistCard(card.name, e.target.checked)
-                          }}
-                          checked={card.blacklisted}
-                        />
-                      </li>
-                    </>
-                  )}
-                </For>
-              </ul>
+                <ul
+                  aria-label={t('Cards within {{expansion}}', {
+                    expansion: expansion.name
+                  })}
+                >
+                  <For each={cards().get(expansion.id)}>
+                    {(card) => (
+                      <>
+                        <li class={styles['card-item']}>
+                          <label for={card.name}>{card.name}</label>
+                          <input
+                            id={card.name}
+                            type="checkbox"
+                            onChange={(e) => {
+                              blacklistCard(card.name, e.target.checked)
+                            }}
+                            checked={card.blacklisted}
+                          />
+                        </li>
+                      </>
+                    )}
+                  </For>
+                </ul>
+              </details>
             </li>
           )}
         </For>
